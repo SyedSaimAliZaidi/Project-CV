@@ -23,9 +23,9 @@ const useStyles = makeStyles((theme) => ({
 export default function CustomizedTimeline() {
     const classes = useStyles();
     const data = [
-        { year: '2019 - 2020',duration: "Sep 2019 - June 2020", position: "Web Developer", category:'Part-Time', company: "Skynners (Pvt.) Ltd." },
-        { year: '2020',duration: "Jan 2020 - Feb 2020", position: "React Native Developer", category:'Internship', company: "Syscrypt.co.uk"},
-        { year: '2019', duration: "July 2019 - August 2019", position: "JavaScript Developer", category:'Internship', company: "Skynners (Pvt.) Ltd."},
+        { link: "https://www.skynners.com/", year: '2019 - 2020',duration: "Sep 2019 - June 2020", position: "Web Developer", category:'Part-Time', company: "Skynners (Pvt.) Ltd." },
+        { link: "https://syscrypt.co.uk/",year: '2020',duration: "Jan 2020 - Feb 2020", position: "React Native Developer", category:'Internship', company: "Syscrypt.co.uk"},
+        { link: "https://www.skynners.com/",year: '2019', duration: "July 2019 - August 2019", position: "JavaScript Developer", category:'Internship', company: "Skynners (Pvt.) Ltd."},
     ]
     return (
         <ul className="timeline">
@@ -34,10 +34,10 @@ export default function CustomizedTimeline() {
                     return(
                         <li key={index}>        
                             <div style={{paddingBottom:10}}>
-                                <Typography style={{color: "#22C0E8"}}  variant="h6" component="h1">
+                                <Typography style={{color: "#22C0E8"}}  variant="h6" component="h4">
                                     {item.position}
                                 </Typography>
-                                <Typography>{item.company}</Typography>
+                                <Typography variant="subtitle" component="h3"><a href={item.link} target="_blank" style={{color:"black",textDecoration:"none"}}>{item.company}</a></Typography>
                                 <Typography variant="body2" color="textSecondary">
                                     {item.duration}
                                     <br></br>
