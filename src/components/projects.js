@@ -8,13 +8,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Chips(props) {
+export default function Projects(props) {
     const classes = useStyles()
     return(
-        <ul>
-            {
-                props.data.map((item,index)=> <li key={index}><Typography><a href={item} target="_blank" style={{color:"black",textDecoration:"none"}}>{item}</a></Typography></li> )  
-            }
+        <ul className="timeline">
+          {
+            props.data.map((item,index)=> {
+
+              return(
+                <li key={index}>            
+                  <div style={{paddingBottom:20}}>
+                    <Typography variant="h6" component="h4">
+                        {item.name}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary">
+                        {item.technology}
+                    </Typography>
+                  </div>
+                </li>
+            
+              )
+            })            
+          }
         </ul>
     ) 
 }
