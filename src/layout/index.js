@@ -23,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'inline-block',
         paddingTop: theme.spacing(5)
     },
+    profilePic:{
+        // paddingLeft: theme.spacing(10),
+        paddingTop: theme.spacing(6),
+    },
     title:{
         textTransform : 'uppercase',
         paddingLeft: theme.spacing(0)
@@ -56,7 +60,7 @@ export default function Layout() {
     const [technicalSkills,setTechSkills] = useState([
         "C / C++","Python","HTML","CSS","Bootstrap","PHP","MYSQL","MongoDB","Javascript","jQuery","Node.js","Reactjs","React Native","Laravel"
     ])
-    const [references, setReferences] = useState(["https://github.com/SyedSaimAliZaidi?tab=repositories","https://www.linkedin.com/in/syed-saim-ali-zaidi-a0542714b"])
+    const [references, setReferences] = useState([{icon: <i class="fa fa-github" style={{fontSize:'1.4rem'}}></i>,link:"https://github.com/SyedSaimAliZaidi?tab=repositories"},{icon: <i class="fa fa-linkedin"></i>,link:"https://www.linkedin.com/in/syed-saim-ali-zaidi-a0542714b"}])
     const [projects, setProjects]  =useState(
         {
             academic:[
@@ -78,40 +82,47 @@ export default function Layout() {
         <Container>
             <Card style={{marginTop:20, marginBottom:20}} raised={true}>
                 <Grid container style={{paddingBottom:30}}>
-                    <Grid item xs={12}>
-                        <Grid container className={classes.grid}>
+                    <Grid item xs={12}  className={classes.grid}>
+                        <Grid container>
                             <Grid item md={4}>
-                                <div align="center">
-                                    <Grid container className={classes.grid}>
-                                        <Grid item md={12}>
-                                            <div align="center" className={classes.profile}>
+                                <Grid container >
+                                    <Grid item xs={12} sm={12} md={12}>
+                                        <div align="center">
+                                            <div className={classes.profilePic}>
                                                 <Avatar src={avatar} className={classes.large}/>
-                                                <div>
-                                                    <Typography variant="h6"  className={classes.title}>Syed Saim Ali Zaidi</Typography>
-                                                    <Typography variant="subtitle2" className={classes.subtitle}>
-                                                        MERN Stack Developer
-                                                    </Typography>
-                                                </div>
                                             </div>
-                                        </Grid>
+                                            <div>
+                                                <Typography variant="h6"  className={classes.title}>Syed Saim Ali Zaidi</Typography>
+                                                <Typography variant="subtitle2" className={classes.subtitle}>
+                                                    MERN Stack Developer
+                                                </Typography>
+                                            </div>
+
+                                        </div>
                                     </Grid>
-                                </div>                              
+                                </Grid>
                                 <Grid container>
-                                    <Grid item md={12}>
-                                        <div align="center" className={classes.paddingTop}>
+                                    <Grid item xs={12} sm={12} md={12}>
+                                        <div  className={classes.paddingTop}>
                                             <Typography variant="h6"><strong>Contact</strong></Typography>
 
-                                            <div compontent="ul" className={classes.list}>
-                                                <li><PhoneIcon fontSize="small"/>{"  +92 300 2935165"}</li>
-                                                <li className={classes.listItem}><EmailIcon fontSize="small"/>{" saimgt123@gmail.com"}</li>
-                                                <li className={classes.listItem}><HomeIcon fontSize="small"/>{"  House# A-55, Decent Homes, Block-11, Gulshan-e-Iqbal, Karachi."}</li>
+                                            <div component="ul" style={{listStyle:"none"}}>
+                                                <li className={classes.listItem}>
+                                                    <span style={{display: "inline-flex"}}><PhoneIcon fontSize="small"/><Typography style={{paddingLeft:5}}>{"  +92 300 2935165"}</Typography></span>
+                                                </li>
+                                                <li className={classes.listItem}>
+                                                    <span style={{display: "inline-flex"}}><EmailIcon fontSize="small"/><Typography style={{paddingLeft:5}}>{" saimgt123@gmail.com"}</Typography></span>
+                                                </li>
+                                                <li className={classes.listItem}>
+                                                    <span style={{display: "inline-flex"}}><HomeIcon fontSize="small"/><Typography style={{paddingLeft:5}}>{"  House# A-55, Decent Homes, Block-11, Gulshan-e-Iqbal, Karachi."}</Typography></span>
+                                                </li>
                                             </div>
                                         </div>
                                     </Grid>                           
                                 </Grid>
                                 <Grid container>
-                                    <Grid item md={12}>
-                                        <div align="center" className={classes.paddingTop}>
+                                    <Grid item xs={12} sm={12} md={12}>
+                                        <div  className={classes.paddingTop}>
                                             <Typography variant="h6"><strong>Soft Skills</strong></Typography>
                                             <div style={{paddingTop:10}}></div>
                                             <Skills data={softSkills}/>
@@ -119,8 +130,8 @@ export default function Layout() {
                                     </Grid>
                                 </Grid>                           
                                 <Grid container>
-                                    <Grid item md={12}>
-                                        <div  align="center" className={classes.paddingTop}>
+                                    <Grid item xs={12} sm={12} md={12}>
+                                        <div   className={classes.paddingTop}>
                                             <Typography variant="h6"><strong>Technical Skills</strong></Typography>
                                             <div style={{paddingTop:10}}></div>
                                             <Skills data={technicalSkills}/>
@@ -128,15 +139,15 @@ export default function Layout() {
                                     </Grid>
                                 </Grid>                           
                                 <Grid container>
-                                    <Grid item md={12}>
-                                        <div  align="center" className={classes.paddingTop}>
+                                    <Grid item xs={12} sm={12} md={12}>
+                                        <div   className={classes.paddingTop}>
                                             <Typography variant="h6"><strong>References</strong></Typography>
                                             <ReferenceList data={references}/>
                                         </div>
                                     </Grid>
                                 </Grid>  
                             </Grid>
-                            <Grid item md={8}>
+                            <Grid item md={8} >
                                 <Grid container>
                                     <Grid item md={12}>
                                         <div className={classes.paddingTop}>
