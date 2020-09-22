@@ -80,7 +80,7 @@ export default function Layout() {
     )
     return (
         <Container>
-            <Card style={{marginTop:20, marginBottom:20}} raised={true}>
+            <Card className="fadeInanimated fadeIn" style={{marginTop:20, marginBottom:20}} raised={true}>
                 <Grid container style={{paddingBottom:30}}>
                     <Grid item xs={12}  className={classes.grid}>
                         <Grid container>
@@ -105,7 +105,7 @@ export default function Layout() {
                                     <Grid item xs={12} sm={12} md={12}>
                                         <div  className={classes.paddingTop}>
                                             <Typography variant="h6"><strong>Contact</strong></Typography>
-
+                                            <div style={{paddingTop:10}}></div>
                                             <div component="ul" style={{listStyle:"none"}}>
                                                 <li className={classes.listItem}>
                                                     <span style={{display: "inline-flex"}}><PhoneIcon fontSize="small"/><Typography style={{paddingLeft:5}}>{"  +92 300 2935165"}</Typography></span>
@@ -142,6 +142,7 @@ export default function Layout() {
                                     <Grid item xs={12} sm={12} md={12}>
                                         <div   className={classes.paddingTop}>
                                             <Typography variant="h6"><strong>References</strong></Typography>
+                                            <div style={{paddingTop:10}}></div>
                                             <ReferenceList data={references}/>
                                         </div>
                                     </Grid>
