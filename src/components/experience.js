@@ -20,17 +20,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomizedTimeline() {
+export default function CustomizedTimeline(props) {
     const classes = useStyles();
-    const data = [
-        { link: "https://www.skynners.com/", year: '2019 - 2020',duration: "Sep 2019 - July 2020", position: "Web Developer", category:'Part-Time', company: "Skynners (Pvt.) Ltd." },
-        { link: "https://syscrypt.co.uk/",year: '2020',duration: "Jan 2020 - Feb 2020", position: "React Native Developer", category:'Internship', company: "Syscrypt.co.uk"},
-        { link: "https://www.skynners.com/",year: '2019', duration: "July 2019 - August 2019", position: "JavaScript Developer", category:'Internship', company: "Skynners (Pvt.) Ltd."},
-    ]
+    
     return (
         <ul className="timeline">
             {
-                data.map((item,index)=>{
+                props.data.map((item,index)=>{
                     return(
                         <li key={index}>        
                             <div style={{paddingBottom:10}}>

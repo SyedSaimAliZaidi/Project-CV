@@ -1,11 +1,11 @@
 import React from 'react';
-import Layout from "./layout/index"
+import CvLayout from "./layout/index"
 import "./index.css"
 
 function App() {
   return (
     <div >
-      <Layout/>
+      <CvLayout/>
     </div>
   );
 }

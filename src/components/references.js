@@ -13,7 +13,7 @@ export default function Chips(props) {
     return(
         <div component="ul" style={{listStyle:"none"}}>
           {
-          props.data.map((item,index)=> <li style={{paddingTop:5}} key={index}><span style={{display:"inline-flex"}}>{item.icon}<Typography><a href={item.link} target="_blank" style={{color:"black",textDecoration:"none", marginLeft:5}}>{item.link}</a></Typography></span></li> )  
+          props.data.map((item,index)=> <li style={{paddingTop:5,paddingLeft:5}} key={index}><span style={{display:"inline-flex"}}>{item.icon}<Typography><a href={item.link} target="_blank" style={{color:"black",textDecoration:"none", marginLeft:5}}>{item.link}</a></Typography></span></li> )  
           }
         </div>
     ) 

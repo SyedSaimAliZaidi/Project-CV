@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { Container, Grid, Card, Avatar, Typography  } from "@material-ui/core"
 import avatar from "../assets/img/dp.jpeg"
-import Timeline from "../components/timeline"
+import Experience from "../components/experience"
 import Education from "../components/education"
 import { makeStyles } from '@material-ui/core/styles';
 import PhoneIcon from '@material-ui/icons/Phone';
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         // display: "inline-block" 
     }
 }));
-export default function Layout() {
+export default function CvLayout() {
     const classes = useStyles();
     const [softSkills,setSoftSkills] = useState([
         "Project Management","Team Work","Quick Learner","Problem Solver","Adaptability"
@@ -78,6 +78,16 @@ export default function Layout() {
             ]
         }
     )
+    const [education, setEducation] = useState([
+        {link:"http://nu.edu.pk/", year: '2017 - present',duration: "Aug 2017 - present", degree: "Bachelor in Computer Science (BS-CS)", institute: "National University Of Computer And Emerging Sciences(FAST-NU), Karachi.", semester: '7th smester', percentage: 'CGPA: 2.44' },
+        {link:"http://citycollege.edu.pk/", year: '2015 - 2017',duration: "Aug 2015 - May 2017",  degree: "Higher Secondary School Certificate (Pre-Engineering)", institute: "City College Of Science And Commerce, Multan.", semester: '', percentage: 'Percentage: 76%'},
+        {link:"https://nishat.edu.pk/", year: '2013 - 2015', duration: "May 2013- May 2015",  degree: "Secondary School Certificate (Pre-Engineering)", institute: "Nishat High School, Multan.", semester: '', percentage: 'Percentage: 88%'},
+    ])
+    const [experience, setExperience] = useState([
+        { link: "https://www.skynners.com/", year: '2019 - 2020',duration: "Sep 2019 - July 2020", position: "Web Developer", category:'Part-Time', company: "Skynners (Pvt.) Ltd." },
+        { link: "https://syscrypt.co.uk/",year: '2020',duration: "Jan 2020 - Feb 2020", position: "React Native Developer", category:'Internship', company: "Syscrypt.co.uk"},
+        { link: "https://www.skynners.com/",year: '2019', duration: "July 2019 - August 2019", position: "JavaScript Developer", category:'Internship', company: "Skynners (Pvt.) Ltd."},
+    ])
     return (
         <Container>
             <Card className="fadeInanimated fadeIn" style={{marginTop:20, marginBottom:20}} raised={true}>
@@ -166,7 +176,7 @@ export default function Layout() {
                                     <Grid item md={12}>
                                         <div className={classes.paddingTop}>
                                             <Typography variant="h6"><strong>Experience</strong></Typography>
-                                            <Timeline/>
+                                            <Experience data={experience}/>
                                         </div>
                                     </Grid>
                                 </Grid>
@@ -174,7 +184,7 @@ export default function Layout() {
                                     <Grid item md={12}>
                                         <div className={classes.paddingTop}>
                                             <Typography variant="h6"><strong>Education</strong></Typography>
-                                            <Education/>
+                                            <Education data={education} />
                                         </div>
                                     </Grid>
                                 </Grid>
